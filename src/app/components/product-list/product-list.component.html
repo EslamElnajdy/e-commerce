@@ -1,0 +1,13 @@
+<div class="all-container">
+    <div *ngFor="let it of datafinal;index as i" class="container" >
+        <img src="{{it.url}}"
+         alt="" (click)="route(i)">
+        <p>{{it.name}}</p>
+        <p>{{it.price | currency}}</p>
+        <select #sel>
+            <option *ngFor="let number of [1,2,3,4,5,6,7,8,9,10]">{{number}}</option>
+        </select>
+        <button type="button" (click)="add(it,sel.value)">add to cart</button>
+    </div>
+
+</div>

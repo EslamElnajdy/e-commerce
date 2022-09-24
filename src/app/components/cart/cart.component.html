@@ -1,0 +1,20 @@
+<div class="con-cart">
+    <div  >
+        <div *ngFor="let FD of fdata ; index as i" class="con-pro">
+            <div>
+                <img src="{{FD.url}}" alt="">
+            </div>
+            <div >
+                <h3>{{FD.name}}</h3>
+                <p>{{FD.price | currency}}</p>
+                <span>Amount:</span>
+                <input #input type="number" min="1" max="10" minlength="1" (ngModelChange)="change(input.value,i)"  [ngModel]="FD.amount">
+                <br>
+                <button type="button" (click)="delete(i)">delete</button>
+            </div>
+        </div>
+        <p *ngIf="price() !== 0">{{price() | currency}}</p>
+    </div>
+    
+   <app-form [price]="price()" (event)="done($event)"></app-form>
+</div>

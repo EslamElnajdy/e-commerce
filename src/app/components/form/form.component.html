@@ -1,0 +1,42 @@
+<div>
+    <form #form="ngForm" (ngSubmit)="onsubmit(name)">
+        <label for="">Full name</label>
+        <input type="text" #name="ngModel" name="name" ngModel placeholder="(minimum 3 characters)" minlength="3" required>
+        <div *ngIf="name.invalid && name.touched">
+            <div *ngIf="name.errors?.['required']" style="color: red;">
+                Name is required.
+              </div>
+              <div *ngIf="name.errors?.['minlength']" style="color: red;">
+                Name must be at least 3 characters long.
+            </div>
+        </div>
+       
+        <label for="">Adress</label>
+        <input type="text" #adress="ngModel" name="adress" ngModel placeholder="(minimum 6 characters" minlength="6" required>
+
+        <div *ngIf="adress.invalid && adress.touched">
+            <div *ngIf="adress.errors?.['required']" style="color: red;">
+                Adress is required.
+              </div>
+              <div *ngIf="adress.errors?.['minlength']" style="color: red;">
+                Adress must be at least 6 characters long.
+            </div>
+        </div>
+
+        <label for="">Credit card number</label>
+        <input type="number" #cartnumber="ngModel" name="cartnumber" ngModel placeholder="(16-digit-number)"  required pattern=".{16,16}">
+
+        <div *ngIf="cartnumber.invalid && cartnumber.touched">
+            <div *ngIf="cartnumber.errors?.['required']" style="color: red;">
+                Credit card number is required.
+            </div>
+            <div *ngIf="cartnumber.errors?.['minlength']" style="color: red;">
+                Credit card number must be at least 16 characters long.
+            </div>
+        </div>
+
+        <p>We'll never share your payment details with anyone else.</p>
+        <button type="submit">Submit</button>
+    </form>
+   
+</div>

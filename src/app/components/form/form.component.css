@@ -1,0 +1,24 @@
+form{
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+}
+form label{
+    margin: 20px 0 10px;
+}
+form input{
+    height: 20px;
+}
+form button{
+    width: 80px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size:16px;
+    cursor: pointer;
+}
+form.ng-invalid button{
+    background-color: #0000ff3d;
+}

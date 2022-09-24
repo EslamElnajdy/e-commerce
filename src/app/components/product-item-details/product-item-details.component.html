@@ -1,0 +1,14 @@
+
+<div class="con-det">
+    <div class="con-img">
+        <img [src]="products[index]?.url" alt="photo">
+    </div>
+    <div class="con-des">
+         <h1>{{products[index]?.name}}</h1>
+         <h4>{{products[index]?.price | currency}}</h4>
+         <p>{{products[index]?.description}}</p>
+         <input type="number" #input min="1" value="1" max="10">
+         <button type="button" (click)="add(products[index],input.value)">add to cart</button>
+         <a routerLink="/">Back to product list</a>
+    </div>
+</div>
